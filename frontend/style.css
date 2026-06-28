@@ -1,0 +1,12 @@
+body{
+    font-family: Arial;
+    padding: 40px;
+}
+
+button{
+    padding: 10px;
+}
+
+#cart{
+    margin-top: 20px;
+}
