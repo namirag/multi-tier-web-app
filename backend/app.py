@@ -1,9 +1,11 @@
+
 from flask import Flask, jsonify, request  # type: ignore
 import mysql.connector  # type: ignore
 
 app = Flask(__name__)
 
 # ---------------- CORS ----------------
+
 @app.after_request
 def add_cors_headers(response):
     response.headers["Access-Control-Allow-Origin"] = "*"
@@ -15,12 +17,13 @@ def add_cors_headers(response):
 # ---------------- DB CONNECTION ----------------
 def get_connection():
     return mysql.connector.connect(
-        host="mysql",
-        user="root",
-        password="admin123",
+        host="multi-tier-mysql-db.cpqcmkoqc2ky.us-east-2.rds.amazonaws.com",
+        user="admin",
+        password="admin123!",
         database="shop",
         port=3306
     )
+
 
 
 # ---------------- GET PRODUCTS ----------------
